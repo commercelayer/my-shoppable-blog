@@ -1,0 +1,39 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bulma";
+
+$base-spacing: 20px;
+
+.author {
+  font-size: 0.9rem;
+  margin-top: -16px;
+  color: $grey;
+}
+
+.post-content {
+  padding: $base-spacing;
+}
+
+.post-commerce {
+  padding: $base-spacing;
+
+  h6 {
+    margin-bottom: $base-spacing/2;
+  }
+  .sku {
+    margin-top: $base-spacing;
+    padding-top: $base-spacing/2;
+    border-top: 1px solid $border;
+
+    .offer-price-compare {
+      color: $grey;
+      text-decoration: line-through;
+    }
+
+    .button {
+      margin-top: $base-spacing;
+    }
+  }
+}

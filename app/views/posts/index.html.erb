@@ -1,0 +1,6 @@
+<h1 class="title">My Shoppable Blog</h1>
+<p class="subtitle">Powered by ButterCMS and Commerce Layer</p>
+
+<% @posts.each do |post| %>
+  <%= render "post", post: post %>
+<% end %>

@@ -1,0 +1,21 @@
+<div class="sku columns">
+  <div class="column is-one-third">
+    <%= image_tag sku.image_url %>
+  </div>
+  <div class="column">
+    <h6><%= sku.name %></h6>
+    <div class="offer">
+      <div class="offer-price">
+        <%= sku.prices.first.formatted_amount %>
+        <span class="offer-price-compare"><%= sku.prices.first.formatted_compare_at_amount %></span>
+      </div>
+      <div class="offer-stock has-text-success">
+        <%= sku.stock_items.first.quantity %> in stock
+      </div>
+    </div>
+    <%= form_tag purchase_post_path(@post.slug) do %>
+      <%= hidden_field_tag :sku_id, sku.id %>
+      <%= submit_tag "Buy now", class: "button is-success is-fullwidth" %>
+    <% end %>
+  </div>
+</div>

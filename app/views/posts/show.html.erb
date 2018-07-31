@@ -1,0 +1,24 @@
+<%= link_to "&larr; Back to all posts".html_safe, root_path %>
+<h1 class="title"><%= @post.title %></h1>
+<p class="subtitle">
+  by <%= "#{@post.author.first_name} #{@post.author.last_name}" %>,
+  on <%= Time.parse(@post.published).strftime('%B %d, %Y') %>
+</p>
+<div class="box">
+  <%= image_tag(@post.featured_image) %>
+</div>
+<div class="columns">
+  <div class="column is-two-thirds">
+    <div class="post-content">
+      <%= @post.body.html_safe %>
+    </div>
+  </div>
+  <div class="column">
+    <div class="post-commerce">
+      <h4>In this post</h4>
+      <% @skus.each do |sku| %>
+        <%= render "sku", sku: sku %>
+      <% end %>
+    </div>
+  </div>
+</div>
